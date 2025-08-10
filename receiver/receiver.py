@@ -134,11 +134,11 @@ def run_gan_on_extracted_frames(scale, lr_folder="lr_frames", sr_folder="sr_fram
     print("Starting GAN-enhancement process on extracted images...")
     
     model_selection_map = {
-        2: "fine-tuned_x2plus",
-        4: "fine-tuned_x4plus"
+        2: "fine-tuned_g_x2plus",
+        4: "fine-tuned_g_x4plus"
     }
 
-    model = model_selection_map.get(scale, "fine-tuned_x2plus")
+    model = model_selection_map.get(scale, "fine-tuned_g_x2plus")
     print(f"Model {model} selected.")
     if scale not in model_selection_map:
         print(f"Scale {scale} is not supported in this system. Standardmodel (x2) is selected.")
